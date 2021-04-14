@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  Content block
+  <!-- Content block -->
   {% block content %}
   
   <!-- Popular movie -->
@@ -33,6 +33,13 @@
   
   
   {% endblock%}
+  <!-- Styles block -->
+  
+  {% block styles%}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+  {% endblock %}
+  <!-- Content block -->
 </body>
 
 </html>
