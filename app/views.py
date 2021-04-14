@@ -17,7 +17,7 @@ def index():
     now_showing_movie = get_movies('now_playing')
     # print(popular_movies)
     title = 'Home - Welcome to The best Movie Review Website Online'
-    return render_template('index.html', title=title, popular=popular_movies)
+    return render_template('index.html', title=title, popular=popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie)
 
 
 @app.route('/movie/<int:id>')
