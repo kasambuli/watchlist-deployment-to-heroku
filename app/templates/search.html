@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-{% imports 'macros.html' as macro%}
+{% import 'macros.html' as macro %}
 
 {% block content %}
 
@@ -8,8 +8,8 @@
     <h3> Found {{ movies| count }} matches</h3>
     <hr>
     <ul>
-      {{ macro.displayMoviesList(movies)}}
+      {{ macro.displayMovieList(movies)}}
     </ul>
   </div>
 </div>
-{{% endblock %}}
+{% endblock %}
