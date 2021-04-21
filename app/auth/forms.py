@@ -1,13 +1,14 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,SubmitField,ValidationError,BooleanField
-from wtforms.validators import Required,Email,EqualTo
+from wtforms import StringField,PasswordField,SubmitField,BooleanField
+from wtforms.validators import Required,Email,EqualTo,Length
 from ..models import User
+from wtforms import ValidationError
 
 class RegistrationForm(FlaskForm):
   email = StringField('Your Email Address',validators=[Required(),Email()])
   username = StringField('Enter your Username',validators=[Required()])
   password = PasswordField('Password',validators=[Required(),EqualTo('confirm password',
-  message='Password must match')])
+  message='Passwords must match')])
   password_confirm = PasswordField('Confirm Passwords',validators=[Required()])
   submit = SubmitField('Sign up')
 
@@ -20,7 +21,7 @@ class RegistrationForm(FlaskForm):
       raise ValidationError('username not available')
 
 class LoginForm(FlaskForm):
-  email = StringField('Your Email Address', validators=[Required(), Email()])
+  email = StringField('Your Email Address', validators=[Required(),Email()])
   password = PasswordField('Password', validators=[Required()])
   remember = BooleanField('Remember me')
   submit = SubmitField('Sign In')

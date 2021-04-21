@@ -11,6 +11,10 @@ class Config:
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://burens:Hawaii@localhost/watchlist'
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+  @staticmethod
+  def init_app(app):
+      pass
+
 class ProdConfig(Config):
   '''
   Production  configuration child class
