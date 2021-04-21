@@ -1,4 +1,4 @@
 # created by virtualenv automatically
 env/
 *.pyc
-instance/
+start.sh/
